@@ -1,0 +1,48 @@
+<h3 class="title">
+  Filters
+  <button mat-icon-button (click)="closeFilter()">
+    <mat-icon>close</mat-icon>
+  </button>
+</h3>
+
+<mat-form-field>
+  <input id="countrySelect"
+         type="text"
+         placeholder="Select Country"
+         aria-label="Country"
+         matInput
+         [formControl]="countryFormControl"
+         [matAutocomplete]="countryAuto">
+  <mat-autocomplete #countryAuto="matAutocomplete" (change)="setDefaults()" >
+    <mat-option *ngFor="let county of countryList" [value]="county.name">
+      {{county.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+<mat-form-field>
+  <input id="categorySelect"
+         type="text"
+         placeholder="Select Category"
+         aria-label="Category"
+         matInput
+         [formControl]="categoryFormControl"
+         [matAutocomplete]="categoryAuto">
+  <mat-autocomplete #categoryAuto="matAutocomplete">
+    <mat-option *ngFor="let category of categoriesList" [value]="category.name">
+      {{category.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
+
+<div class="videosCountPerPage">
+  <div class="caption">Count of videos on the page</div>
+  <mat-slider
+    thumbLabel
+    tickInterval="1"
+    [min]="1"
+    [max]="200"
+    [thumbLabel]="true"
+    (change)="onChangeVideosPerPage($event.value)"
+    [value]="defaultVideosOnPage"></mat-slider>
+</div>

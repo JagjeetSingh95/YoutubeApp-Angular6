@@ -1,0 +1,114 @@
+.card {
+  width      : 100%;
+  box-shadow : 0 2px 18px 0 rgba(0, 0, 0, 0.4);
+  border     : 0;
+  min-height : 200px;
+  position   : relative;
+  overflow   : hidden;
+  &:hover {
+    box-shadow : 0 0 25px 0 rgba(0, 0, 0, 0.15);
+    border     : 0;
+    .img-container img {
+      transform : scale(1.3);
+      filter    : brightness(1);
+    }
+    .video-statistic {
+      transform : translate(45px, 0);
+    }
+  }
+  .card-block {
+    display : inline-flex;
+    padding : 0;
+  }
+  .card-header {
+    display             : none;
+    height              : 40px;
+    background-size     : 70px 40px;
+    background-position : 10px 0;
+    background-repeat   : no-repeat;
+  }
+  .card-header a {
+    display : none;
+  }
+  .img-container {
+    position : absolute;
+    width    : 100%;
+    height   : 100%;
+    z-index  : 0;
+    cursor   : pointer;
+    img {
+      width       : 100%;
+      transition  : transform .4s ease-in-out;
+      transform   : scale(1.6);
+      will-change : transform, filter;
+      filter      : brightness(0.8);
+    }
+    mat-icon {
+      display     : flex;
+      margin-left : calc(50% - 40px);
+      margin-top  : 40px;
+      font-size   : 90px;
+      color       : #f5f1d7;
+    }
+  }
+  .video-title {
+    position    : absolute;
+    width       : 100%;
+    padding     : 8px;
+    font-size   : 12px;
+    color       : #f9e5c0;
+    background  : rgba(161, 11, 11, 0.6);
+    margin      : 0;
+    font-weight : 600;
+    bottom      : 0;
+    box-shadow  : 0 -5px 35px rgba(0, 0, 0, 0.6);
+    text-shadow : 0 2px 2px #000;
+    cursor      : pointer;
+  }
+  .video-desc {
+    font-size  : 12px;
+    padding    : 5px 10px 5px 10px;
+    position   : absolute;
+    z-index    : 1;
+    color      : #969696;
+    background : #3a0808;
+    width      : 100%;
+    bottom     : 0;
+    p {
+      margin-bottom : 0;
+      &:first-child {
+        margin-bottom : 5px;
+      }
+    }
+    p > span {
+      padding : 0;
+    }
+    strong {
+      font-size : 14px;
+      color     : #2381C9;
+      cursor    : pointer;
+    }
+  }
+  .video-statistic {
+    position    : absolute;
+    font-size   : 11px;
+    color       : #f9e5c0;
+    padding     : 2px 7px 0;
+    background  : rgba(0, 0, 0, 0.5);
+    right       : 0;
+    width       : 150px;
+    transition  : transform 0.25s ease-in-out,
+    -webkit-transform 0.25s cubic-bezier(0.62, -0.04, 0, 1.63);
+    will-change : transform;
+    transform   : translate(119px, 0);
+    .viewCount {
+      margin-bottom : 3px;
+    }
+    mat-icon {
+      font-size      : 20px;
+      vertical-align : -5px;
+    }
+  }
+}
+
+

@@ -1,0 +1,17 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav 
+               mode="over"
+               position="end"
+               [fixedInViewport]="true"
+               [autoFocus]="true"
+               [(opened)]="opened" 
+               (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+        <app-slide-filters (filterClosed)="sidenav.toggle()"></app-slide-filters>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <app-page-header (filterSlideOpen)="sidenav.toggle()"></app-page-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

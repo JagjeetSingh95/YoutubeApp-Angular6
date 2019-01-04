@@ -1,0 +1,26 @@
+:host {
+  display : block;
+  height  : 100%;
+}
+
+mat-sidenav {
+  background : #f9e5c0;
+}
+
+mat-sidenav-container {
+  padding-top : 50px;
+  height      : 100%;
+}
+
+mat-sidenav-content {
+  z-index : auto;
+  &::-webkit-scrollbar {
+    width : 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background : #bbbbbb;
+  }
+  &::-webkit-scrollbar-track {
+    background : #f0f1f2;
+  }
+}

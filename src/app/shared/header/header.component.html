@@ -1,0 +1,13 @@
+<div id="page-header">
+  <nav>
+    <div class="logo-bg" [routerLink]="['./']">
+      <img class="logo" src="/assets/logo.svg" alt="Trendings"/>
+    </div>
+    <div class="opened-module-title">
+      {{title$ | async}}
+    </div>
+    <button mat-button class="menu-toggle" (click)="filterSlide()" *ngIf="filtersBtn">
+      <mat-icon>settings</mat-icon>
+    </button>
+  </nav>
+</div>

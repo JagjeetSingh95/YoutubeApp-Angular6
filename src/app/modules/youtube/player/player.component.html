@@ -1,0 +1,10 @@
+<div class="video-container">
+  <div class="gl-loading showLoading" *ngIf="videoLoader">
+    <div class="spinner"></div>
+  </div>
+  <iframe #iframe width="100%" height="100%" [src]="embedUrl" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="controls">
+  <button mat-button [routerLink]="['/youtube']">< Back to Trends</button>
+</div>

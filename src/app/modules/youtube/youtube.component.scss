@@ -1,0 +1,56 @@
+@import '../../../styles/animation';
+@import '../../../styles/mixins';
+
+.video-load {
+  background-color : #fdfbec;
+  height           : 315px;
+  width            : 100%;
+  z-index          : 999;
+  position         : fixed;
+}
+
+#youtube {
+  min-height       : calc(100% + 30px);
+  background-color : #fdfbec;
+  padding          : 18px;
+
+  > .row {
+    display         : flex;
+    justify-content : stretch;
+    flex-wrap       : wrap;
+  }
+
+  .card-container {
+    width   : 100%;
+    padding : 5px;
+    @include respond-to(desktop) {
+      width : 25%;
+    }
+    @include respond-to(notebook) {
+      width : 33.3334%;
+    }
+    @include respond-to(tablet) {
+      width : 50%;
+    }
+    @include respond-to(mobile) {
+      width : 100%;
+    }
+  }
+}
+
+.error-plate {
+  padding     : 15px;
+  background  : #bf3c3c;
+  margin      : 15px;
+  color       : #fff;
+  font-size   : 16px;
+  font-weight : 500;
+  span {
+    vertical-align : 10px;
+  }
+  mat-icon {
+    font-size : 35px;
+    width     : 50px;
+    height    : 35px;
+  }
+}

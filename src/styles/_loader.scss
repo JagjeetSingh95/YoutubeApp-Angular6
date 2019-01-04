@@ -1,0 +1,102 @@
+.gl-loading {
+  opacity    : 0;
+  transition : opacity .3s ease-in-out;
+  width      : 100%;
+  height     : 100%;
+  position   : absolute;
+  top        : 0;
+  bottom     : 0;
+  left       : 0;
+  right      : 0;
+  background : #fdfbec;
+  z-index    : -1;
+}
+
+app-root:empty + .gl-loading,
+.showLoading.gl-loading {
+  opacity : 1;
+  z-index : 100;
+}
+
+.loading-overlay:before {
+  content    : '';
+  position   : absolute;
+  top        : 0;
+  bottom     : 0;
+  left       : 0;
+  right      : 0;
+  background : #ffffff;
+  opacity    : .8;
+  z-index    : 2;
+}
+
+.spinner {
+  width             : 40px;
+  height            : 40px;
+  left              : calc(50% - 20px);
+  top               : calc(50% - 40px);
+  position          : absolute;
+  text-align        : center;
+  -webkit-animation : sk-rotate 2.0s infinite linear;
+  animation         : sk-rotate 2.0s infinite linear;
+  z-index           : 10;
+}
+
+.spinner.blue:before,
+.spinner.blue:after {
+  background : #fdfbec;
+}
+
+.spinner:before,
+.spinner:after {
+  content           : '';
+  width             : 60%;
+  height            : 60%;
+  display           : inline-block;
+  position          : absolute;
+  top               : 0;
+  background-color  : #ff5454;
+  border-radius     : 100%;
+  -webkit-animation : sk-bounce 2.0s infinite ease-in-out;
+  animation         : sk-bounce 2.0s infinite ease-in-out;
+}
+
+.spinner:after {
+  top                     : auto;
+  bottom                  : 0;
+  -webkit-animation-delay : -1.0s;
+  animation-delay         : -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+  100% {
+    -webkit-transform : rotate(360deg)
+  }
+}
+
+@keyframes sk-rotate {
+  100% {
+    transform         : rotate(360deg);
+    -webkit-transform : rotate(360deg)
+  }
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform : scale(0.0)
+  }
+  50% {
+    -webkit-transform : scale(1.0)
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform         : scale(0.0);
+    -webkit-transform : scale(0.0);
+  }
+  50% {
+    transform         : scale(1.0);
+    -webkit-transform : scale(1.0);
+  }
+}

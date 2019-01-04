@@ -1,0 +1,23 @@
+<div class="card" [routerLink]="['/youtube', video.id]">
+  <div class="img-container">
+    <img [src]="video.thumbnail" *ngIf="video.thumbnail">
+    <mat-icon>movie</mat-icon>
+  </div>
+  <div class="video-statistic">
+    <div class="publishedAt">
+      <mat-icon>av_timer</mat-icon>
+      <span>{{ video.publishedAt }}</span>
+    </div>
+    <div class="viewCount">
+      <mat-icon>visibility</mat-icon>
+      <span>{{ video.viewCount }}</span>
+    </div>
+    <div class="likeCount">
+      <mat-icon>favorite</mat-icon>
+      <span>{{ video.likeCount }}</span>
+    </div>
+  </div>
+  <p class="video-title text-ellipsis">
+    {{ video.title }}
+  </p>
+</div>

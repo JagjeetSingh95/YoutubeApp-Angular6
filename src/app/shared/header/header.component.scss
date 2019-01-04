@@ -1,0 +1,67 @@
+:host {
+  position : fixed;
+  width    : 100%;
+  z-index  : 1;
+  top      : 0;
+}
+
+#page-header {
+  a {
+    color : #000000;
+  }
+  nav {
+    display          : flex;
+    height           : 53px;
+    background-color : #ff5454;
+    box-shadow       : 0 0 4px rgba(0, 0, 0, 0.2);
+    border-bottom    : 1px solid #f9e5c0;
+    color            : #333;
+  }
+  .logo {
+    width : 140px;
+  }
+  .logo-bg {
+    padding    : 6px 15px 5px;
+    position   : relative;
+    width      : 225px;
+    height     : 52px;
+    background : #A10B0B;
+    outline    : 0;
+    cursor     : pointer;
+    &:before {
+      position      : absolute;
+      top           : 0;
+      right         : 0;
+      border-bottom : 52px solid #ff5454;
+      border-left   : 55px solid #bf3c3c;
+      width         : 0;
+      content       : '';
+      box-shadow    : -4px -5px 4px rgba(0, 0, 0, 0.2);
+    }
+  }
+  .opened-module-title {
+    color       : #f9e5c0;
+    font-weight : 900;
+    font-size   : 16px;
+    margin-left : -10px;
+    z-index     : 1;
+    padding     : 18px 0;
+    cursor      : default;
+  }
+  .menu-toggle {
+    margin        : 0 0 0 auto;
+    width         : 52px;
+    min-width     : auto;
+    height        : auto;
+    border-radius : 0;
+    color         : #fdfbec;
+    background    : #ff5454;
+    transition    : background-color .15s ease-in-out;
+    &:hover {
+      background : #bf3c3c;
+    }
+    mat-icon {
+      margin-top : -3px;
+    }
+  }
+}

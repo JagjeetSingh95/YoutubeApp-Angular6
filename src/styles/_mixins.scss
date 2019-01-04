@@ -1,0 +1,30 @@
+$small: 480px;
+$ipad-landscape: 768px;
+$medium: 992px;
+$large: 1200px;
+$tablet-portrait: 768px;
+$tablet-landscape: 1024px;
+
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $tablet-portrait + 1) { @content; }
+  }
+  @else if $media == tablet-normal {
+    @media only screen and (max-width: $tablet-landscape) { @content; }
+  }
+  @else if $media == notebook {
+    @media (max-width: $large - 1) { @content; }
+  }
+  @else if $media == desktop {
+    @media (min-width: $large) { @content; }
+  }
+  @else if $media == small-device {
+    @media only screen and (max-width: $medium - 1) { @content; }
+  }
+  @else if $media == medium-device {
+    @media only screen and (min-width: $medium) { @content; }
+  }
+}

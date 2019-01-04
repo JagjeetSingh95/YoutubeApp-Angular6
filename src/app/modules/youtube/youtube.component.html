@@ -1,0 +1,21 @@
+<div *ngFor="let trendingVideo of trendingVideos">
+  <div id="youtube" *ngIf="(trendingVideo | async) as videos; else loadingOrError">
+    <div class="row">
+      <div class="card-container"
+          *ngFor="let video of videos">
+        <app-video-component [video]="video"></app-video-component>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #loadingOrError>
+  <div class="error-plate" *ngIf="loadingError$ | async; else loading">
+    <mat-icon>warning</mat-icon>
+    <span>Error loading. Please try again later.</span>
+  </div>
+
+  <ng-template class="gl-loading showLoading" #loading>
+    <div class="spinner"></div>
+  </ng-template>
+</ng-template>
